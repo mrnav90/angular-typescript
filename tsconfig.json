@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "removeComments": true,
+    "sourceMap": true,
+    "module": "commonjs",
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "sourceMap": false,
+    "outDir": "build",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node"
+  },
+  "include": [
+    "./src/globals.d.ts"
+  ],
+  "exclude": [
+    "public",
+    "node_modules",
+    "dist"
+  ],
+  "version": "2.0.6"
+}

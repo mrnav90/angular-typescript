@@ -1,11 +1,11 @@
 'use strict';
 
 import * as gulp from 'gulp';
-import templateCache from 'gulp-angular-templatecache';
-import rename from 'gulp-rename';
-import gzip from 'gulp-gzip';
-import uglify from 'gulp-uglify';
-import htmlMin from 'gulp-htmlmin';
+import * as templateCache from 'gulp-angular-templatecache';
+import * as rename from 'gulp-rename';
+import * as gzip from 'gulp-gzip';
+import * as uglify from 'gulp-uglify';
+import * as htmlMin from 'gulp-htmlmin';
 import { APP_TEMPLATES, TEMPLATE_CACHE, APP_DIST, APP_PUBLIC, DEVELOPMENT } from '../const';
 
 gulp.task('templates', () => {

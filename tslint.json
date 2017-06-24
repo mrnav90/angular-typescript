@@ -48,7 +48,10 @@
     "no-require-imports": false,
     "no-string-literal": true,
     "no-switch-case-fall-through": true,
-    "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
+    "trailing-comma": [true, {
+      "multiline": "never",
+      "singleline": "never"
+    }],
     "no-trailing-whitespace": true,
     "no-unreachable": true,
     "no-unused-expression": true,

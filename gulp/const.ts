@@ -1,19 +1,19 @@
 'use strict';
 
-import Dotenv from 'dotenv';
+import * as dotenv from 'dotenv';
 
-Dotenv.load();
+dotenv.config();
 
 const DEVELOPMENT = process.env.NODE_ENV === 'development';
-const APP_SRC = '/src/';
-const APP_PUBLIC = '/public/';
-const APP_DIST = '/dist/';
-const APP_JS = '/src/**/*.ts';
-const APP_TEMPLATES = '/src/**/*.html';
-const APP_SCSS = '/src/**/*.scss';
-const APP_ASSETS = '/assets/**/*';
+const APP_SRC = './src/';
+const APP_PUBLIC = './public/';
+const APP_DIST = './dist/';
+const APP_JS = './src/**/*.ts';
+const APP_TEMPLATES = './src/**/*.html';
+const APP_SCSS = './src/**/*.scss';
+const APP_ASSETS = './assets/**/*';
 const APP_HTML = 'index.html';
-const APP_INDEX = '/src/index.ts';
+const APP_INDEX = './src/index.ts';
 const TEMPLATE_CACHE = 'app.templates.ts';
 const BUILD_PATH = DEVELOPMENT ? APP_DIST : APP_PUBLIC;
 const PUBLIC_HTML = BUILD_PATH + 'index.html';

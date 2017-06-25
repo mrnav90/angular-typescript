@@ -6,15 +6,17 @@ import * as compressionPlugin from 'compression-webpack-plugin';
 import * as path from 'path';
 import * as dotenv from 'dotenv';
 
+// load env config
 dotenv.config();
 
-module.exports = {
+// webpack production config
+let webpackConfig: any = {
   output: {
     path: path.join(__dirname, '../public'),
     filename: 'main.js'
   },
   module: {
-    rules: [
+    loaders: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -27,17 +29,11 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: extractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader'
-        })
+        loader: extractTextPlugin.extract('style', 'css!')
       },
       {
         test: /\.scss$/,
-        loader: extractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
-        })
+        loader: extractTextPlugin.extract('style', 'css!sass!')
       },
       {
         test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
@@ -86,3 +82,5 @@ module.exports = {
     })
   ]
 };
+
+export default webpackConfig;

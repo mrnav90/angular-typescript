@@ -46,7 +46,7 @@
     "no-eval": true,
     "no-internal-module": true,
     "no-require-imports": false,
-    "no-string-literal": true,
+    "no-string-literal": false,
     "no-switch-case-fall-through": true,
     "trailing-comma": [true, {
       "multiline": "never",
@@ -65,7 +65,7 @@
       "check-else",
       "check-whitespace"
     ],
-    "quotemark": [true, "double"],
+    "quotemark": [true, "singleline"],
     "radix": true,
     "semicolon": [true, "always"],
     "switch-default": true,

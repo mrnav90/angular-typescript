@@ -9,15 +9,17 @@
     "sourceMap": false,
     "outDir": "build",
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "typeRoots": ["./node_modules/@types"],
+    "types": ["angular", "angular-ui-bootstrap", "jquery", "node"]
   },
   "include": [
-    "globals.d.ts"
+    "./src/index.d.ts"
   ],
   "exclude": [
     "public",
     "node_modules",
+    "!node_modules/@types",
     "dist"
-  ],
-  "version": "2.0.6"
+  ]
 }

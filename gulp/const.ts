@@ -2,25 +2,27 @@
 
 import * as dotenv from 'dotenv';
 
+// load env config
 dotenv.config();
 
-const DEVELOPMENT = process.env.NODE_ENV === 'development';
-const APP_SRC = './src/';
-const APP_PUBLIC = './public/';
-const APP_DIST = './dist/';
-const APP_JS = './src/**/*.ts';
-const APP_TEMPLATES = './src/**/*.html';
-const APP_SCSS = './src/**/*.scss';
-const APP_ASSETS = './assets/**/*';
-const APP_HTML = 'index.html';
-const APP_INDEX = './src/index.ts';
-const TEMPLATE_CACHE = 'app.templates.ts';
-const BUILD_PATH = DEVELOPMENT ? APP_DIST : APP_PUBLIC;
-const PUBLIC_HTML = BUILD_PATH + 'index.html';
-const PUBLIC_JS = BUILD_PATH + 'main.js';
-const PUBLIC_STYLE = BUILD_PATH + 'style.css';
-const PUBLIC_MANIFEST = BUILD_PATH + 'rev-manifest.json';
-const PUBLIC_TEMPLATE = BUILD_PATH + TEMPLATE_CACHE;
+// define constant for gulp build
+const DEVELOPMENT: boolean = process.env.NODE_ENV === 'development';
+const APP_SRC: string = './src/';
+const APP_PUBLIC: string = './public/';
+const APP_DIST: string = './dist/';
+const APP_JS: string = './src/**/*.ts';
+const APP_TEMPLATES: string = './src/**/*.html';
+const APP_SCSS: string = './src/**/*.scss';
+const APP_ASSETS: string = './assets/**/*';
+const APP_HTML: string = 'index.html';
+const APP_INDEX: string = './src/index.ts';
+const TEMPLATE_CACHE: string = 'app.templates.ts';
+const BUILD_PATH: string = DEVELOPMENT ? APP_DIST : APP_PUBLIC;
+const PUBLIC_HTML: string = BUILD_PATH + 'index.html';
+const PUBLIC_JS: string = BUILD_PATH + 'main.js';
+const PUBLIC_STYLE: string = BUILD_PATH + 'style.css';
+const PUBLIC_MANIFEST: string = BUILD_PATH + 'rev-manifest.json';
+const PUBLIC_TEMPLATE: string = BUILD_PATH + TEMPLATE_CACHE;
 
 export {
   APP_SRC,

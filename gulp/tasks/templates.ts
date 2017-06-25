@@ -8,8 +8,13 @@ import * as uglify from 'gulp-uglify';
 import * as htmlMin from 'gulp-htmlmin';
 import { APP_TEMPLATES, TEMPLATE_CACHE, APP_DIST, APP_PUBLIC, DEVELOPMENT } from '../const';
 
+/**
+ * @name Gulp task templates
+ * @description This task create app templates cache for app
+ * @return gulp
+ */
 gulp.task('templates', () => {
-  let templates = gulp.src(APP_TEMPLATES)
+  let templates: any = gulp.src(APP_TEMPLATES)
     .pipe(htmlMin({ collapseWhitespace: true }))
     .pipe(templateCache({ standalone: true }))
     .pipe(uglify())

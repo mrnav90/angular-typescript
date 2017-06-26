@@ -1,12 +1,20 @@
 'use strict';
 
+/**
+ * @name Router
+ * @description This class to use route config app
+ * @param  {ng.ui.IUrlRouterProvider} $urlRouterProvider
+ * @param  {ng.ILocationProvider}     $locationProvider
+ * @return {Router}
+ */
 class Router {
 
+  public static $inject: ReadonlyArray<string> = ['$urlRouterProvider', '$locationProvider'];
   private static instance: Router;
 
   /**
    * @name getInstance
-   * @description This function get instance of class
+   * @description This function to use get instance of class
    * @param  {ng.ui.IUrlRouterProvider} $urlRouterProvider
    * @param  {ng.ILocationProvider}     $locationProvider
    * @return {Router}
@@ -37,4 +45,4 @@ class Router {
   }
 }
 
-angular.module('Enigma').config(Router.getInstance);
+export default angular.module(`${APP_NAME}.router`, []).config(Router.getInstance).name;

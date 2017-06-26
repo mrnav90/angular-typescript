@@ -59,7 +59,8 @@ let webpackConfig: any = {
       'window.jQuery': 'jquery'
     }),
     new webpack.DefinePlugin({
-      'API_URL': JSON.stringify(process.env.API_SERVER)
+      'API_URL': JSON.stringify(process.env.API_SERVER),
+      'APP_NAME': JSON.stringify(process.env.APP_NAME)
     }),
     new extractTextPlugin('style.css'),
     new webpack.optimize.UglifyJsPlugin({

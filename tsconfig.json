@@ -24,9 +24,6 @@
       "node"
     ]
   },
-  "include": [
-    "./src/index.d.ts"
-  ],
   "exclude": [
     "public",
     "node_modules",

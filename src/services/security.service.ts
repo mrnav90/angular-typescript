@@ -1,5 +1,11 @@
 'use strict';
 
+/**
+ * @name SecurityService
+ * @description This class to use store user data
+ * @param  {ng.cookies.ICookiesService}            private$cookieStore
+ * @param  {ng.local.storage.ILocalStorageService} privatelocalStorageService
+ */
 export default class SecurityService {
 
   public static $inject: ReadonlyArray<string> = ['$cookieStore', 'localStorageService'];
@@ -7,13 +13,13 @@ export default class SecurityService {
   /**
    * @name constructor
    * @description init property for class
-   * @param  {ng.cookies.ICookiesService} $cookieStore CookieStore angular service
+   * @param  {ng.cookies.ICookiesService} $cookieStore
    */
   constructor(private $cookieStore: ng.cookies.ICookiesService, private localStorageService: ng.local.storage.ILocalStorageService) {}
 
   /**
    * @name setUserInfo
-   * @description This function save userInfo to cookieStore
+   * @description This function to use store userInfo
    * @param {any} userInfo userInfo response from API
    */
   public setUserInfo(userInfo: any): void {
@@ -22,7 +28,7 @@ export default class SecurityService {
 
   /**
    * @name getUserInfo
-   * @description This function get userInfo from cookieStore
+   * @description This function to use get userInfo from cookieStore
    * @return {Object} userInfo data
    */
   public getUserInfo(): Object {
@@ -31,7 +37,7 @@ export default class SecurityService {
 
   /**
    * @name setAccessToken
-   * @description This function save accessToken to cookieStore
+   * @description This function to use store accessToken to cookieStore
    * @param {string} token accessToken user login
    */
   public setAccessToken(token: string): void {
@@ -40,7 +46,7 @@ export default class SecurityService {
 
   /**
    * @name getAccessToken
-   * @description This function get accessToken from cookieStore
+   * @description This function to use get accessToken from cookieStore
    * @return {string} accessToken user login
    */
   public getAccessToken(): string {
@@ -49,7 +55,7 @@ export default class SecurityService {
 
   /**
    * @name setCSRFToken
-   * @description This function save CSRFToken to cookieStore
+   * @description This function to use store CSRFToken to cookieStore
    * @param {string} token CSRFToken submit form
    */
   public setCSRFToken(token: string): void {
@@ -58,7 +64,7 @@ export default class SecurityService {
 
   /**
    * @name getCSRFToken
-   * @description This function get CSRFToken from cookieStore
+   * @description This function to use get CSRFToken from cookieStore
    * @return {string} CSRFToken submit form
    */
   public getCSRFToken(): string {
@@ -67,7 +73,7 @@ export default class SecurityService {
 
   /**
    * @name isAuthenticated
-   * @description This function check user is authenticated
+   * @description This function to use check user is authenticated
    * @return {boolean} isAuthenticated
    */
   public isAuthenticated(): boolean {
@@ -76,7 +82,7 @@ export default class SecurityService {
 
   /**
    * @name revokeUser
-   * @description This function remove userInfo and token from cookieStore
+   * @description This function to use remove userInfo and token from cookieStore
    */
   public revokeUser(): void {
     this.$cookieStore.remove('token');

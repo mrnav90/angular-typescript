@@ -16,7 +16,7 @@ import { APP_TEMPLATES, TEMPLATE_CACHE, APP_DIST, APP_PUBLIC, DEVELOPMENT } from
 gulp.task('templates', () => {
   let templates: any = gulp.src(APP_TEMPLATES)
     .pipe(htmlMin({ collapseWhitespace: true }))
-    .pipe(templateCache({ standalone: true }))
+    .pipe(templateCache({ standalone: true, module: 'Enigma.templates' }))
     .pipe(uglify())
     .pipe(rename(TEMPLATE_CACHE));
   return DEVELOPMENT ?

@@ -1,5 +1,9 @@
 'use strict';
 
+/**
+ * @name IPagination
+ * @description This interface class to use define property for pagination
+ */
 interface IPagination {
   page: number;
   to: number;
@@ -9,6 +13,10 @@ interface IPagination {
   pageSize: number;
 }
 
+/**
+ * @name BaseController
+ * @description This class to use extends for app controllers
+ */
 export default class BaseController {
 
   protected $filter: any;
@@ -37,7 +45,7 @@ export default class BaseController {
 
   /**
    * @name translate
-   * @description This function translate text by key
+   * @description This method to use translate text by key
    * @param {string} key translate key
    * @return {string} translate text
    */
@@ -49,7 +57,7 @@ export default class BaseController {
 
   /**
    * @name getPagination
-   * @description This function get response pagination
+   * @description This method to use get response pagination
    * @param  {any}    data response data
    * @return {Object}      pagination object
    */
@@ -66,7 +74,7 @@ export default class BaseController {
 
   /**
    * @name setPagination
-   * @description This function set pagination for list item
+   * @description This method to use set pagination for list item
    * @param {any} data response data
    */
   protected setPagination(data: any): void {
@@ -80,7 +88,7 @@ export default class BaseController {
 
   /**
    * @name clearMessageError
-   * @description This function clear message error in form
+   * @description This method to use clear message error in form
    */
   protected clearMessageError(): void {
     this.messageErrors = null;
@@ -88,7 +96,7 @@ export default class BaseController {
 
   /**
    * @name openModal
-   * @description This function open ui bootstrap modal with custom config
+   * @description This method to use open ui bootstrap modal with custom config
    * @param {any} config config of modal
    */
   protected openModal(config: any): void {

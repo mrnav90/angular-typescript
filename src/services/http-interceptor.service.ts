@@ -1,5 +1,14 @@
 'use strict';
 
+/**
+ * @name HttpInterceptorService
+ * @description This class service to use handle http request url
+ * @param  {ng.IQService}                          $q
+ * @param  {ng.local.storage.ILocalStorageService} localStorageService
+ * @param  {ng.IRootScopeService}                  $rootScope
+ * @param  {any}                                   SecurityService
+ * @return {Object}
+ */
 export default class HttpInterceptorService {
 
   public static $inject: ReadonlyArray<string> = ['$q', 'localStorageService', '$rootScope', 'SecurityService'];
@@ -7,7 +16,7 @@ export default class HttpInterceptorService {
 
   /**
    * @name getInstance
-   * @description This function get instance of class
+   * @description This function to use get instance of class
    * @param  {ng.IQService}                          $q
    * @param  {ng.local.storage.ILocalStorageService} localStorageService
    * @param  {ng.IRootScopeService}                  $rootScope
@@ -42,7 +51,7 @@ export default class HttpInterceptorService {
 
   /**
    * @name request
-   * @description This function handle http request
+   * @description This function to use handle http request
    * @param  {ng.IRequestConfig} config http request config
    * @return {ng.IRequestConfig}        http request config
    */
@@ -62,7 +71,7 @@ export default class HttpInterceptorService {
 
   /**
    * @name requestError
-   * @description This function handle http request error
+   * @description This function to use handle http request error
    * @param  {any} rejection http rejection data
    * @return {any}           http rejection data
    */
@@ -72,7 +81,7 @@ export default class HttpInterceptorService {
 
   /**
    * @name response
-   * @description This function handle http response data
+   * @description This function to use handle http response data
    * @param  {any} data http response data
    * @return {any}      http response data
    */
@@ -82,7 +91,7 @@ export default class HttpInterceptorService {
 
   /**
    * @name responseError
-   * @description This function handle http response error
+   * @description This function to use handle http response error
    * @param  {any} rejection http rejection data
    * @return {any}           http rejection data
    */
@@ -109,7 +118,7 @@ export default class HttpInterceptorService {
 
   /**
    * @name get
-   * @description This function get class methods
+   * @description This function to use get class methods
    * @return {Object} class methods
    */
   private get(): Object {

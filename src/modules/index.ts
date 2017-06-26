@@ -2,6 +2,6 @@
 
 import './signIn';
 
-angular.module('Enigma.modules', [
-  'Enigma.SignIn'
+angular.module(`${APP_NAME}.modules`, [
+  `${APP_NAME}.SignIn`
 ]);

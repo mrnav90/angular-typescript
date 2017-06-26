@@ -1,28 +1,38 @@
 'use strict';
 
-class AppService {
+/**
+ * @name AppConfig
+ * @description This class to use config app services
+ * @param  {ng.IHttpProvider}                $httpProvider
+ * @param  {any}                             laddaProvider
+ * @param  {ng.translate.ITranslateProvider} $translateProvider
+ * @param  {ng.toastr.IToastrConfig}         toastrConfig
+ * @return {AppConfig}
+ */
+class AppConfig {
 
-  private static instance: AppService;
+  public static $inject: ReadonlyArray<string> = ['$httpProvider', 'laddaProvider', '$translateProvider', 'toastrConfig'];
+  private static instance: AppConfig;
 
   /**
    * @name getInstance
-   * @description This function get instance of class
+   * @description This function to use get instance of class
    * @param  {ng.IHttpProvider}                $httpProvider
    * @param  {any}                             laddaProvider
    * @param  {ng.translate.ITranslateProvider} $translateProvider
    * @param  {ng.toastr.IToastrConfig}         toastrConfig
-   * @return {AppService}
+   * @return {AppConfig}
    */
   public static getInstance(
     $httpProvider: ng.IHttpProvider,
     laddaProvider: any,
     $translateProvider: ng.translate.ITranslateProvider,
     toastrConfig: ng.toastr.IToastrConfig
-  ): AppService {
-    if (!AppService.instance) {
-      AppService.instance = new AppService($httpProvider, laddaProvider, $translateProvider, toastrConfig);
+  ): AppConfig {
+    if (!AppConfig.instance) {
+      AppConfig.instance = new AppConfig($httpProvider, laddaProvider, $translateProvider, toastrConfig);
     }
-    return AppService.instance;
+    return AppConfig.instance;
   }
 
   /**
@@ -50,4 +60,4 @@ class AppService {
   }
 }
 
-angular.module('Enigma').config(AppService.getInstance);
+export default angular.module(`${APP_NAME}.config`, []).config(AppConfig.getInstance).name;

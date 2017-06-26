@@ -1,9 +1,14 @@
 'use strict';
 
+/**
+ * @name BaseService
+ * @description This class to use extends for app services request API
+ * @param  {ng.IHttpService} $http angular http
+ * @param  {ng.IQService}    $q    angular q service
+ */
 export default class BaseService {
 
-  protected $http: ng.IHttpService;
-  protected $q: ng.IQService;
+  public static $inject: ReadonlyArray<string> = ['$http', '$q'];
   protected headers: Object;
   protected apiURL: string;
 
@@ -13,9 +18,7 @@ export default class BaseService {
    * @param  {ng.IHttpService} $http inject $http service request
    * @param  {ng.IQService}    $q    inject $q service promise
    */
-  constructor($http: ng.IHttpService, $q: ng.IQService) {
-    this.$http = $http;
-    this.$q = $q;
+  constructor(private $http: ng.IHttpService, private $q: ng.IQService) {
     this.apiURL = API_URL;
     this.headers = {
       'Content-Type': 'application/json',
@@ -25,7 +28,7 @@ export default class BaseService {
 
   /**
    * @name post
-   * @description This function request http post data
+   * @description This method to use request http post data
    * @param  {string}      url  request url
    * @param  {Object}      data data
    * @return {ng.IPromise}      http promise
@@ -43,7 +46,7 @@ export default class BaseService {
 
   /**
    * @name get
-   * @description This function request http get data
+   * @description This method to use request http get data
    * @param  {string}      url    request url
    * @param  {Object}      params request params
    * @return {ng.IPromise}        http promise
@@ -62,7 +65,7 @@ export default class BaseService {
 
   /**
    * @name put
-   * @description This function request http put data
+   * @description This method to use request http put data
    * @param  {string}      url  request url
    * @param  {Object}      data data
    * @return {ng.IPromise}      http promise
@@ -80,7 +83,7 @@ export default class BaseService {
 
   /**
    * @name patch
-   * @description This function request http patch data
+   * @description This method to use request http patch data
    * @param  {string}      url  request url
    * @param  {Object}      data data
    * @return {ng.IPromise}      http promise
@@ -98,7 +101,7 @@ export default class BaseService {
 
   /**
    * @name delete
-   * @description This function request http delete data
+   * @description This method to use request http delete data
    * @param  {string}      url request url
    * @return {ng.IPromise}     http promise
    */
@@ -112,5 +115,4 @@ export default class BaseService {
     });
     return deferred.promise;
   }
-
 }

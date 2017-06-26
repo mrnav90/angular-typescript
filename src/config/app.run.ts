@@ -1,12 +1,23 @@
 'use strict';
 
+/**
+ * @name Application
+ * @description This class to use config when app run
+ * @param  {ng.local.storage.ILocalStorageService} localStorageService
+ * @param  {ng.translate.ITranslateService}        $translate
+ * @param  {ng.IRootScopeService}                  $rootScope
+ * @param  {ng.IAnchorScrollService}               $anchorScroll
+ * @param  {ng.ILocationService}                   $location
+ * @return {Application}
+ */
 class Application {
 
+  public static $inject: ReadonlyArray<string> = ['localStorageService', '$translate', '$rootScope', '$anchorScroll', '$location'];
   private static instance: Application;
 
   /**
    * @name getInstance
-   * @description This function get instance of class
+   * @description This function to use get instance of class
    * @param  {ng.local.storage.ILocalStorageService} localStorageService
    * @param  {ng.translate.ITranslateService}        $translate
    * @param  {ng.IRootScopeService}                  $rootScope
@@ -51,4 +62,4 @@ class Application {
     }
 }
 
-angular.module('Enigma').run(Application.getInstance);
+export default angular.module(`${APP_NAME}.run`, []).run(Application.getInstance).name;

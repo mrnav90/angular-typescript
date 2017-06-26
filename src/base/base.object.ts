@@ -1,5 +1,10 @@
 'use strict';
 
+/**
+ * @name BaseObject
+ * @description This class to use extends for app model object
+ * @param  {Object} object object data
+ */
 export default class BaseObject {
 
   private data: Object;
@@ -15,7 +20,7 @@ export default class BaseObject {
 
   /**
    * @name set
-   * @description This function set value for object by key
+   * @description This method to use set value for object by key
    * @param {string} key   key object
    * @param {any}    value value object
    */
@@ -25,7 +30,7 @@ export default class BaseObject {
 
   /**
    * @name get
-   * @description This function get data object by key
+   * @description This method to use get data object by key
    * @param  {string} key key object
    * @return {any}        value object
    */
@@ -38,7 +43,7 @@ export default class BaseObject {
 
   /**
    * @name setId
-   * @description This function set object id
+   * @description This method to use set object id
    * @param {string | number} object id
    */
   protected setId(id: string | number): void {
@@ -47,7 +52,7 @@ export default class BaseObject {
 
   /**
    * @name getId
-   * @description This function get object id
+   * @description This method to use get object id
    * @return {string} object id
    */
   protected getId(): string | number {
@@ -56,7 +61,7 @@ export default class BaseObject {
 
   /**
    * @name setData
-   * @description This function set data for class object model
+   * @description This method to use set data for class object model
    * @param {Object} data object data
    */
   protected setData(data: Object): void {
@@ -65,7 +70,7 @@ export default class BaseObject {
 
   /**
    * @name getData
-   * @description This function get object data
+   * @description This method to use get object data
    * @return {Object} object data
    */
   protected getData(): Object {
@@ -74,7 +79,7 @@ export default class BaseObject {
 
   /**
    * @name call
-   * @description This function call method of class object
+   * @description This method to use call method of class object
    * @param  {string} method method name
    * @return {any}           function
    */

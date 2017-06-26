@@ -58,7 +58,8 @@ let webpackConfig: any = {
     }),
     new extractTextPlugin('style.css'),
     new webpack.DefinePlugin({
-      'API_URL': JSON.stringify(process.env.API_SERVER)
+      'API_URL': JSON.stringify(process.env.API_SERVER),
+      'APP_NAME': JSON.stringify(process.env.APP_NAME)
     })
   ]
 };

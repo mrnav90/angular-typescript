@@ -1,5 +1,9 @@
 'use strict';
 
+/**
+ * @name BaseComponent
+ * @description This class to use extends for app components
+ */
 export default class BaseComponent {
 
   protected $filter: any;
@@ -17,7 +21,7 @@ export default class BaseComponent {
 
   /**
    * @name translate
-   * @description This function translate text by key
+   * @description This method to use translate text by key
    * @param {string} key translate key
    * @return {string} translate text
    */

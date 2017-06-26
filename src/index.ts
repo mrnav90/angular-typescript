@@ -1,13 +1,30 @@
 'use strict';
 
-import * as __angular from 'angular';
-
-declare global {
-  const angular: typeof __angular;
-  const API_URL: string;
-}
-
+import * as angular from 'angular';
+import '@uirouter/angularjs';
+import 'angular-cookies';
+import 'angular-translate';
+import 'angular-local-storage';
+import 'angular-toastr';
+import 'angular-sanitize';
+import 'angular-ladda';
 import 'angular-ui-bootstrap';
-import './base/base.controller';
-import './base/base.component';
-import './base/base.service';
+import './services';
+import './modules';
+
+angular.module('Enigma', [
+  'ui.router',
+  'ngCookies',
+  'LocalStorageModule',
+  'ui.bootstrap',
+  'angular-ladda',
+  'pascalprecht.translate',
+  'toastr',
+  'templates',
+  'Enigma.services',
+  'Enigma.modules'
+]);
+
+import './config/app.route';
+import './config/app.service';
+import './config/app.run';

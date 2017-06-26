@@ -11,7 +11,18 @@
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "typeRoots": ["./node_modules/@types"],
-    "types": ["angular", "angular-ui-bootstrap", "jquery", "node"]
+    "types": [
+      "angular",
+      "angular-ui-router",
+      "angular-cookies",
+      "angular-translate",
+      "angular-local-storage",
+      "angular-ui-bootstrap",
+      "angular-toastr",
+      "angular-sanitize",
+      "jquery",
+      "node"
+    ]
   },
   "include": [
     "./src/index.d.ts"

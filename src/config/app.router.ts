@@ -35,12 +35,7 @@ class Router {
   constructor(private $urlRouterProvider: ng.ui.IUrlRouterProvider, private $locationProvider: ng.ILocationProvider) {
     this.$locationProvider.html5Mode(true);
     this.$urlRouterProvider.otherwise(($injector: ng.auto.IInjectorService, $location: ng.ILocationService) => {
-      let SecurityService: any = $injector.get('SecurityService');
-      if (SecurityService.isAuthenticated()) {
-        $location.path('/redirect-url/404');
-      } else {
-        $location.path('/signIn');
-      }
+      $location.path('/signIn');
     });
   }
 }

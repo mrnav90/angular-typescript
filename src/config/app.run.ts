@@ -54,7 +54,7 @@ class Application {
       private $anchorScroll: ng.IAnchorScrollService,
       private $location: ng.ILocationService
     ) {
-      let currentLanguage: any = localStorageService.get('currentLanguage') ? localStorageService.get('currentLanguage') : 'ja';
+      let currentLanguage: any = this.localStorageService.get('currentLanguage') ? this.localStorageService.get('currentLanguage') : 'ja';
       this.$translate.use(currentLanguage);
       this.$rootScope.$on('$stateChangeStart', () => {
         this.$anchorScroll('scrollTop');

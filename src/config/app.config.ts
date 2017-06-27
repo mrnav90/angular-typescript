@@ -1,5 +1,8 @@
 'use strict';
 
+const langEn: any = require('!json!../../i18n/en.json');
+const langJa: any = require('!json!../../i18n/ja.json');
+
 /**
  * @name AppConfig
  * @description This class to use config app services
@@ -54,6 +57,8 @@ class AppConfig {
     this.laddaProvider.setOption({
       style: 'zoom-out'
     });
+    this.$translateProvider.translations('ja', langJa);
+    this.$translateProvider.translations('en', langEn);
     this.$translateProvider.preferredLanguage('ja');
     this.$translateProvider.useSanitizeValueStrategy('escape');
     this.toastrConfig.preventOpenDuplicates = true;

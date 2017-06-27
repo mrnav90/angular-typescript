@@ -3,8 +3,8 @@
 /**
  * @name SecurityService
  * @description This class to use store user data
- * @param  {ng.cookies.ICookiesService}            private$cookieStore
- * @param  {ng.local.storage.ILocalStorageService} privatelocalStorageService
+ * @param  {ng.cookies.ICookiesService}            $cookieStore
+ * @param  {ng.local.storage.ILocalStorageService} localStorageService
  */
 export default class SecurityService {
 

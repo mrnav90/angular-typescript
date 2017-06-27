@@ -14,7 +14,7 @@ export default class BaseObject {
    * @description init property for class
    * @param  {Object} object init class object model
    */
-  constructor(protected object: Object) {
+  constructor(object: Object) {
     this.data = object;
   }
 
@@ -55,7 +55,7 @@ export default class BaseObject {
    * @description This method to use get object id
    * @return {string} object id
    */
-  protected getId(): string | number {
+  public getId(): string | number {
     return this.get('id');
   }
 

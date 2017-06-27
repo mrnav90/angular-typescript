@@ -30,7 +30,7 @@ export default class SignInRoute {
    * @param  {ng.ui.IStateProvider} $stateProvider
    */
   constructor(private $stateProvider: ng.ui.IStateProvider) {
-    $stateProvider
+    this.$stateProvider
       .state('signIn', {
         url: '/signIn',
         templateUrl: 'modules/signIn/signIn.html',

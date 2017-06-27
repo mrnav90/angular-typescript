@@ -8,7 +8,8 @@
  */
 export default class BaseService {
 
-  public static $inject: ReadonlyArray<string> = ['$http', '$q'];
+  protected $http: ng.IHttpService;
+  protected $q: ng.IQService;
   protected headers: Object;
   protected apiURL: string;
 
@@ -18,7 +19,9 @@ export default class BaseService {
    * @param  {ng.IHttpService} $http inject $http service request
    * @param  {ng.IQService}    $q    inject $q service promise
    */
-  constructor(private $http: ng.IHttpService, private $q: ng.IQService) {
+  constructor($http: ng.IHttpService, $q: ng.IQService) {
+    this.$http = $http;
+    this.$q = $q;
     this.apiURL = API_URL;
     this.headers = {
       'Content-Type': 'application/json',
@@ -51,7 +54,7 @@ export default class BaseService {
    * @param  {Object}      params request params
    * @return {ng.IPromise}        http promise
    */
-  protected get(url: string, params: Object): ng.IPromise<{}> {
+  protected get(url: string, params?: Object): ng.IPromise<{}> {
     let deferred: ng.IDeferred<{}> = this.$q.defer();
     let requestUrl: string = API_URL + url;
     let requestParams: Object = params ? { params: params, headers: this.headers } : { headers: this.headers };
